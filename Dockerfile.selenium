@@ -1,7 +1,18 @@
+# Use Node.js as base image
 FROM node:18
 
+# Install selenium-side-runner globally
 RUN npm install -g selenium-side-runner
 
+# Copy your Selenium .side test file into the container
 COPY wos.side /tests/wos.side
 
+# Optional: install chromedriver if your tests need it
+RUN apt-get update && apt-get install -y wget gnupg2 \
+ && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
+ && echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
+ && apt-get update \
+ && apt-get install -y google-chrome-stable
+
+# Set CMD to run the test
 CMD ["selenium-side-runner", "/tests/wos.side"]
