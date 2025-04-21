@@ -5,7 +5,7 @@ FROM node:18
 RUN npm install -g selenium-side-runner
 
 # Copy your Selenium .side test file into the container
-COPY wos.side /tests/wos.side
+COPY wos.side 
 
 # Optional: install chromedriver if your tests need it
 RUN apt-get update && apt-get install -y wget gnupg2 \
@@ -15,4 +15,4 @@ RUN apt-get update && apt-get install -y wget gnupg2 \
  && apt-get install -y google-chrome-stable
 
 # Set CMD to run the test
-CMD ["selenium-side-runner", "/tests/wos.side"]
+CMD ["selenium-side-runner", "/wos.side"]
