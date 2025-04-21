@@ -10,13 +10,12 @@ error_reporting(E_ALL);
 ini_set('log_errors', 1);
 ini_set('error_log', 'php_errors.log');
 
-$servername = "localhost";
+$servername = "my-mysql";
 $username = "root";
 $password = "root";
 $dbname = "Jewllery"; 
-$port = 3307;
 
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
+$conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     error_log("Connection failed: " . $conn->connect_error);
     die("Connection failed: " . $conn->connect_error);
