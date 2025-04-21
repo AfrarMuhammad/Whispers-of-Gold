@@ -5,11 +5,11 @@ ini_set('display_errors', 1);
 
 
 const DB_CONFIG = [
-    'host' => 'localhost',
+    'host' => 'my-mysql',
     'username' => 'root',
     'password' => 'root',
     'database' => 'Jewllery',
-    'port' => 3307
+    
 ];
 
 
@@ -27,7 +27,7 @@ try {
         DB_CONFIG['username'],
         DB_CONFIG['password'],
         DB_CONFIG['database'],
-        DB_CONFIG['port']
+        
     );
 
     if ($conn->connect_error) {
