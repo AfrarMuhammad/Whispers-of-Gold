@@ -1,0 +1,7 @@
+FROM node:18
+
+RUN npm install -g selenium-side-runner
+
+COPY wos.side /tests/wos.side
+
+CMD ["selenium-side-runner", "/tests/wos.side"]
