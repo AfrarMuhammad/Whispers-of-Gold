@@ -346,7 +346,7 @@ $selected_jewelry_id = isset($_GET['id']) ? (int)$_GET['id'] : null;
 </head>
 <body>
     <header>
-        <div class="logo">Jewelry</div>
+        <div class="logo">Whisper Of Gold</div>
         <nav>
             <ul>
                 <li><a href="home.php#home">Home</a></li>
