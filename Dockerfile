@@ -3,7 +3,8 @@ FROM php:8.1-apache
 # Install extensions
 RUN docker-php-ext-install mysqli
 
-# Copy code to Apache web root
 COPY . /var/www/html/
+RUN chown -R www-data:www-data /var/www/html
+
 
 EXPOSE 80
